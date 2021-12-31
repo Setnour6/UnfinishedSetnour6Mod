@@ -1,6 +1,8 @@
 # UnfinishedSetnour6Mod
 Hello and welcome to... an unfinished mod by Setnour6.
 
+**This is a now obsolete mod that is no longer maintainted, due to a mod wipe issue.**
+
 - As of version 0.2.1.0, There are about 11 weapons in total (some unobtainable), 8 accessories (one of them being wings), 1 potion, and 1 misc. item, making up a total of 21 items.
 There is also 1 buff, granted from 1 potion.
 
