@@ -1,0 +1,45 @@
+This is the return of the 1.3 mod, and my first ever mod, Unfinished Setnour6 Mod.
+
+This mod has been made and published for testing reasons, but also for better gear that combines certain vanilla items.
+
+This is an incomplete mod, but that's okay.
+
+~ With love from Setnour6.
+
+YouTube: Setnour6
+SoundCloud: Setnour6
+Spotify: Setnour6
+Bandcamp: Setnour6
+
+~~~~~~
+
+Mod contains:
+- 11 weapons (10 were made for testing reasons)
+- 8 accessories (1 wings)
+- 1 potion
+- 1 buff
+- 1 misc. item
+
+~~~~~~
+
+Version 0.2.1.0 (Current Version):
+- Added "Zenith"???.
+	- "Zenith" does not act/function like the actual Zenith from 1.4, but it does something related to it.
+- Added "Static Wings", which grants 10 seconds of flight with huge speed and acceleration.
+	- "Static Wings" will require "Celestial's Particle" for crafting (If AlchemistNPC Mod is enabled) 
+- "Statical Essence" now has a guaranteed chance of dropping from the Dungeon Guardian.
+	- Note that the Moon Lord already drops 1 "Statical Essence" at a guaranteed rate.
+- Gave "Blue Potion" a unique rarity (original rarity set to 9 for consistency).
+- Slight adjustments to "Statical Essence".
+- "Orange Static" is now easier to see.
+
+Version 0.2.0.0:
+- Renamed the mod, now named "Setnour6's Mod (Unfinished)" Instead of "UnfinishedSetnour6Mod". (The internal mod name is kept the same)
+- Added "Green Static".
+- Added "Black Static", but is unobtainable through normal gameplay.
+- Added a new item drop: "Statical Essence". Can be obtained by defeating the Moon Lord. Required to craft all of the static accessories, excluding "Black Static".
+- Added "Blue Potion", which grants immunity to almost all vanilla debuffs... hopefully, along with it's own buff, simply called "Blue Potion" or "Blue Potion Buff".
+- Tooltip adjustments to all "Tutorial Swords".
+- Slight tooltip adjustments to "White Static".
+- "White Static" defense greatly nerfed and life regen slightly nerfed.
+- "White Static" now requires the spore sac and lava waders to be crafted.

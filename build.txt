@@ -1,0 +1,8 @@
+author = Setnour6
+version = 0.3.0.0
+displayName = Untitled Setnour6 Mod
+hideCode = false
+hideResources = false
+includeSource = true
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
+includePDB = true
