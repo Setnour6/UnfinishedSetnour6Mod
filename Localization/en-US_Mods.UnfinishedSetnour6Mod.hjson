@@ -1,0 +1,120 @@
+Projectiles.FakeZenithProjectile.DisplayName: Fake Zenith Projectile
+
+Buffs: {
+	BluePotionBuff: {
+		DisplayName: Blue Potion Buff
+		Description: Mods.UnfinishedSetnour6Mod.Buffs.BluePotionBuff.Description
+	}
+}
+
+Items: {
+	TutorialSwordLevel8: {
+		Tooltip: ""
+		DisplayName: Tutorial Sword Level8
+	}
+
+	TutorialSwordLevel7: {
+		Tooltip: ""
+		DisplayName: Tutorial Sword Level7
+	}
+
+	TutorialSwordLevel6: {
+		Tooltip: ""
+		DisplayName: Tutorial Sword Level6
+	}
+
+	TutorialSwordLevel5: {
+		Tooltip: ""
+		DisplayName: Tutorial Sword Level5
+	}
+
+	TutorialSwordLevel4: {
+		Tooltip: ""
+		DisplayName: Tutorial Sword Level4
+	}
+
+	TutorialSwordLevel3: {
+		Tooltip: ""
+		DisplayName: Tutorial Sword Level3
+	}
+
+	TutorialSwordLevel2: {
+		Tooltip: ""
+		DisplayName: Tutorial Sword Level2
+	}
+
+	TutorialSword: {
+		Tooltip: ""
+		DisplayName: Tutorial Sword
+	}
+
+	TinyHealingPotion: {
+		Tooltip: ""
+		DisplayName: Tiny Healing Potion
+	}
+
+	BluePotion: {
+		Tooltip: ""
+		DisplayName: Blue Potion
+	}
+
+	FakeZenith: {
+		Tooltip: ""
+		DisplayName: Fake Zenith
+	}
+
+	StaticalEssence: {
+		Tooltip: ""
+		DisplayName: Statical Essence
+	}
+
+	BWRealDeathSword2: {
+		Tooltip: ""
+		DisplayName: B W Real Death Sword2
+	}
+
+	BWRealDeathSword: {
+		Tooltip: ""
+		DisplayName: B W Real Death Sword
+	}
+
+	TheStaticRed: {
+		Tooltip: ""
+		DisplayName: The Static Red
+	}
+
+	TheStaticPurple: {
+		Tooltip: ""
+		DisplayName: The Static Purple
+	}
+
+	TheStaticOrange: {
+		Tooltip: ""
+		DisplayName: The Static Orange
+	}
+
+	TheStaticGreen: {
+		Tooltip: ""
+		DisplayName: The Static Green
+	}
+
+	TheStaticBlue: {
+		Tooltip: ""
+		DisplayName: The Static Blue
+	}
+
+	TheStaticBlack: {
+		Tooltip: ""
+		DisplayName: The Static Black
+	}
+
+	TheStatic: {
+		Tooltip: ""
+		DisplayName: The Static
+	}
+
+	StaticWings: {
+		Tooltip: ""
+		DisplayName: Static Wings
+	}
+}

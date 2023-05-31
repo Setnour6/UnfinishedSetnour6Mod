@@ -19,8 +19,8 @@ namespace UnfinishedSetnour6Mod.Projectiles
 		}
 
 		// Token: 0x06000007 RID: 7 RVA: 0x00002077 File Offset: 0x00000277
-		protected TutorialSwordLevel4Projectile()
-		{
-		}
+		//protected TutorialSwordLevel4Projectile()
+		//{
+		//}
 	}
 }

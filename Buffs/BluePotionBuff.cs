@@ -1,5 +1,6 @@
 ﻿using System;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace UnfinishedSetnour6Mod.Buffs
@@ -8,12 +9,12 @@ namespace UnfinishedSetnour6Mod.Buffs
 	public class BluePotionBuff : ModBuff
 	{
 		// Token: 0x0600007B RID: 123 RVA: 0x000053B0 File Offset: 0x000035B0
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			base.DisplayName.SetDefault("Blue Potion");
-			base.Description.SetDefault("Grants immunity to almost all vanilla debuffs\n'Surprisingly better than that 'other' potion'");
+			// base.DisplayName.SetDefault("Blue Potion");
+			// base.Description.SetDefault("Grants immunity to almost all vanilla debuffs\n'Surprisingly better than that 'other' potion'");
 			Main.debuff[base.Type] = false;
-			this.canBeCleared = true;
+			BuffID.Sets.NurseCannotRemoveDebuff[base.Type]/* tModPorter Note: Removed. Use BuffID.Sets.NurseCannotRemoveDebuff instead, and invert the logic */ = true;
 		}
 
 		// Token: 0x0600007C RID: 124 RVA: 0x000053E8 File Offset: 0x000035E8

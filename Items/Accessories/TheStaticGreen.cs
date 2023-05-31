@@ -9,28 +9,28 @@ using Terraria.ModLoader;
 namespace UnfinishedSetnour6Mod.Items.Accessories
 {
 	// Token: 0x02000018 RID: 24
-	[AutoloadEquip(new EquipType[] { 10 })]
+	[AutoloadEquip(EquipType.Shield)]
 	public class TheStaticGreen : ModItem
 	{
 		// Token: 0x06000063 RID: 99 RVA: 0x0000485C File Offset: 0x00002A5C
 		public override void SetStaticDefaults()
 		{
-			base.DisplayName.SetDefault("Green Static");
-			base.Tooltip.SetDefault("[c/7D766E:You feel glitchy from within... ]\n[c/694A8A:Good health and agility is within you ]\nIncreases life regeneration by a lot\n+100 Max Life\nGrants effects of Celestial Shell, Frostspark Boots, and Lifeforce Potion\nAdditionally grants Happy! buff\nGrants immunity to fall damage\n[c/C5D962:Works better if paired with] [c/FFFFFF:'White Static' ]");
-			ItemID.Sets.ItemNoGravity[base.item.type] = true;
-			Main.RegisterItemAnimation(base.item.type, new DrawAnimationVertical(4, 15));
+			// base.DisplayName.SetDefault("Green Static");
+			// base.Tooltip.SetDefault("[c/7D766E:You feel glitchy from within... ]\n[c/694A8A:Good health and agility is within you ]\nIncreases life regeneration by a lot\n+100 Max Life\nGrants effects of Celestial Shell, Frostspark Boots, and Lifeforce Potion\nAdditionally grants Happy! buff\nGrants immunity to fall damage\n[c/C5D962:Works better if paired with] [c/FFFFFF:'White Static' ]");
+			ItemID.Sets.ItemNoGravity[base.Item.type] = true;
+			Main.RegisterItemAnimation(base.Item.type, new DrawAnimationVertical(4, 15));
 		}
 
 		// Token: 0x06000064 RID: 100 RVA: 0x000048B4 File Offset: 0x00002AB4
 		public override void SetDefaults()
 		{
-			base.item.width = 24;
-			base.item.height = 28;
-			base.item.value = 1000000;
-			base.item.rare = 7;
-			base.item.expert = false;
-			base.item.accessory = true;
-			base.item.lifeRegen = 10;
+			base.Item.width = 24;
+			base.Item.height = 28;
+			base.Item.value = 1000000;
+			base.Item.rare = 7;
+			base.Item.expert = false;
+			base.Item.accessory = true;
+			base.Item.lifeRegen = 10;
 		}
 
 		// Token: 0x06000065 RID: 101 RVA: 0x0000491C File Offset: 0x00002B1C
@@ -46,19 +46,19 @@ namespace UnfinishedSetnour6Mod.Items.Accessories
 			player.wolfAcc = true;
 			player.statDefense += 4;
 			player.statLifeMax2 += 100;
-			player.meleeSpeed += 0.1f;
-			player.meleeDamage += 0.1f;
-			player.meleeCrit += 2;
-			player.rangedDamage += 0.1f;
-			player.rangedCrit += 2;
-			player.thrownDamage += 0.1f;
-			player.thrownCrit += 2;
-			player.thrownVelocity += 0.1f;
-			player.magicDamage += 0.1f;
-			player.magicCrit += 2;
+			player.GetAttackSpeed(DamageClass.Melee) += 0.1f;
+			player.GetDamage(DamageClass.Melee) += 0.1f;
+			player.GetCritChance(DamageClass.Generic) += 2;
+			player.GetDamage(DamageClass.Ranged) += 0.1f;
+			player.GetCritChance(DamageClass.Ranged) += 2;
+			player.GetDamage(DamageClass.Throwing) += 0.1f;
+			player.GetCritChance(DamageClass.Throwing) += 2;
+			player.ThrownVelocity += 0.1f;
+			player.GetDamage(DamageClass.Magic) += 0.1f;
+			player.GetCritChance(DamageClass.Magic) += 2;
 			player.pickSpeed -= 0.15f;
-			player.minionDamage += 0.1f;
-			player.minionKB += 0.5f;
+			player.GetDamage(DamageClass.Summon) += 0.1f;
+			player.GetKnockback(DamageClass.Summon).Base += 0.5f;
 			Mod Calamity = ModLoader.GetMod("CalamityMod");
 			if (Calamity != null)
 			{
@@ -74,9 +74,9 @@ namespace UnfinishedSetnour6Mod.Items.Accessories
 		{
 			foreach (TooltipLine line2 in list)
 			{
-				if (line2.mod == "Terraria" && line2.Name == "ItemName")
+				if (line2.Mod == "Terraria" && line2.Name == "ItemName")
 				{
-					line2.overrideColor = new Color?(new Color(0, 230, 25));
+					line2.OverrideColor = new Color?(new Color(0, 230, 25));
 				}
 			}
 		}
@@ -84,8 +84,8 @@ namespace UnfinishedSetnour6Mod.Items.Accessories
 		// Token: 0x06000067 RID: 103 RVA: 0x00004B60 File Offset: 0x00002D60
 		public override void AddRecipes()
 		{
-			ModRecipe modRecipe = new ModRecipe(base.mod);
-			modRecipe.AddIngredient(base.mod.GetItem("StaticalEssence"), 8);
+			Recipe modRecipe = /* base */Recipe.Create(this.Type, 1);
+			modRecipe.AddIngredient(ModContent.ItemType<Drops.StaticalEssence>(), 8);
 			modRecipe.AddIngredient(3467, 250);
 			modRecipe.AddIngredient(3530, 50);
 			modRecipe.AddIngredient(1859, 10);
@@ -99,8 +99,7 @@ namespace UnfinishedSetnour6Mod.Items.Accessories
 			modRecipe.AddIngredient(3110, 1);
 			modRecipe.AddIngredient(1862, 1);
 			modRecipe.AddTile(412);
-			modRecipe.SetResult(this, 1);
-			modRecipe.AddRecipe();
+			modRecipe.Register();
 		}
 
 		// Token: 0x06000068 RID: 104 RVA: 0x000022B6 File Offset: 0x000004B6
