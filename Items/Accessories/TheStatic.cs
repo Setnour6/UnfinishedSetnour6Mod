@@ -9,29 +9,29 @@ using Terraria.ModLoader;
 namespace UnfinishedSetnour6Mod.Items.Accessories
 {
 	// Token: 0x02000015 RID: 21
-	[AutoloadEquip(new EquipType[] { 10 })]
+	[AutoloadEquip(EquipType.Shield)]
 	public class TheStatic : ModItem
 	{
 		// Token: 0x06000050 RID: 80 RVA: 0x00003D30 File Offset: 0x00001F30
 		public override void SetStaticDefaults()
 		{
-			base.DisplayName.SetDefault("White Static");
-			base.Tooltip.SetDefault("[c/7D766E:You feel glitchy from within... ]\n[c/694A8A:Now you feel like a tank. ]\nEnemies take 25 times contact damage\nDamage reduction increased by 50%\nIncreases life regeneration\nGrants immunity to knockback, fall damage, and fire blocks\nGrants immunity to most debuffs\nAdditionally grants immunity to Suffocation, Venom, Midas, Electrified, and Moon Bite... hopefully\nIncreases length of invincibility after taking damage... hopefully\nEffects of Lava Waders, Spore Sac, and Philosopher's Stone... hopefully");
-			ItemID.Sets.ItemNoGravity[base.item.type] = true;
-			Main.RegisterItemAnimation(base.item.type, new DrawAnimationVertical(4, 15));
+			// base.DisplayName.SetDefault("White Static");
+			// base.Tooltip.SetDefault("[c/7D766E:You feel glitchy from within... ]\n[c/694A8A:Now you feel like a tank. ]\nEnemies take 25 times contact damage\nDamage reduction increased by 50%\nIncreases life regeneration\nGrants immunity to knockback, fall damage, and fire blocks\nGrants immunity to most debuffs\nAdditionally grants immunity to Suffocation, Venom, Midas, Electrified, and Moon Bite... hopefully\nIncreases length of invincibility after taking damage... hopefully\nEffects of Lava Waders, Spore Sac, and Philosopher's Stone... hopefully");
+			ItemID.Sets.ItemNoGravity[base.Item.type] = true;
+			Main.RegisterItemAnimation(base.Item.type, new DrawAnimationVertical(4, 15));
 		}
 
 		// Token: 0x06000051 RID: 81 RVA: 0x00003D88 File Offset: 0x00001F88
 		public override void SetDefaults()
 		{
-			base.item.width = 24;
-			base.item.height = 28;
-			base.item.value = 1000000;
-			base.item.rare = 0;
-			base.item.expert = false;
-			base.item.accessory = true;
-			base.item.defense = 20;
-			base.item.lifeRegen = 3;
+			base.Item.width = 24;
+			base.Item.height = 28;
+			base.Item.value = 1000000;
+			base.Item.rare = 0;
+			base.Item.expert = false;
+			base.Item.accessory = true;
+			base.Item.defense = 20;
+			base.Item.lifeRegen = 3;
 		}
 
 		// Token: 0x06000052 RID: 82 RVA: 0x00003DFC File Offset: 0x00001FFC
@@ -47,7 +47,7 @@ namespace UnfinishedSetnour6Mod.Items.Accessories
 			player.lavaMax += 480;
 			player.longInvince = true;
 			player.noFallDmg = true;
-			player.starCloak = true;
+			//player.starCloak = true;
 			player.longInvince = true;
 			player.sporeSac = true;
 			player.buffImmune[20] = true;
@@ -77,9 +77,9 @@ namespace UnfinishedSetnour6Mod.Items.Accessories
 		{
 			foreach (TooltipLine line2 in list)
 			{
-				if (line2.mod == "Terraria" && line2.Name == "ItemName")
+				if (line2.Mod == "Terraria" && line2.Name == "ItemName")
 				{
-					line2.overrideColor = new Color?(new Color(255, 255, 255));
+					line2.OverrideColor = new Color?(new Color(255, 255, 255));
 				}
 			}
 		}
@@ -87,8 +87,8 @@ namespace UnfinishedSetnour6Mod.Items.Accessories
 		// Token: 0x06000054 RID: 84 RVA: 0x00003FE8 File Offset: 0x000021E8
 		public override void AddRecipes()
 		{
-			ModRecipe modRecipe = new ModRecipe(base.mod);
-			modRecipe.AddIngredient(base.mod.GetItem("StaticalEssence"), 10);
+			Recipe modRecipe = /* base */Recipe.Create(this.Type, 1);
+			modRecipe.AddIngredient(ModContent.ItemType<Drops.StaticalEssence>(), 10);
 			modRecipe.AddIngredient(1613, 1);
 			modRecipe.AddIngredient(862, 1);
 			modRecipe.AddIngredient(535, 1);
@@ -103,8 +103,7 @@ namespace UnfinishedSetnour6Mod.Items.Accessories
 			modRecipe.AddIngredient(3336, 1);
 			modRecipe.AddIngredient(908, 1);
 			modRecipe.AddTile(412);
-			modRecipe.SetResult(this, 1);
-			modRecipe.AddRecipe();
+			modRecipe.Register();
 		}
 
 		// Token: 0x06000055 RID: 85 RVA: 0x000022B6 File Offset: 0x000004B6

@@ -14,34 +14,34 @@ namespace UnfinishedSetnour6Mod.Items.Accessories
 		// Token: 0x06000056 RID: 86 RVA: 0x000040E4 File Offset: 0x000022E4
 		public override void SetStaticDefaults()
 		{
-			base.DisplayName.SetDefault("Black Static");
-			base.Tooltip.SetDefault("[c/7D766E:You feel glitchy from within... ]\n[c/694A8A:Uh oh... ]\nEnemies take 500 times contact damage\nAll damage and critical strike chance increased by 500%\n[c/999999:Critical strike boost may not affect other mods besides Calamity ]\nDamage reduction increased by 500%\nIncreases life and mana regeneration by too much\n+4000 Max Life and +1000 Max Mana\nGrants immunity to knockback, fall damage, and fire blocks\nGrants immunity to almost all vanilla debuffs\nIncreases length of invincibility after taking damage... hopefully\nEffects of Philosopher's Stone... hopefully");
-			ItemID.Sets.ItemNoGravity[base.item.type] = true;
-			Main.RegisterItemAnimation(base.item.type, new DrawAnimationVertical(4, 15));
+			// base.DisplayName.SetDefault("Black Static");
+			// base.Tooltip.SetDefault("[c/7D766E:You feel glitchy from within... ]\n[c/694A8A:Uh oh... ]\nEnemies take 500 times contact damage\nAll damage and critical strike chance increased by 500%\n[c/999999:Critical strike boost may not affect other mods besides Calamity ]\nDamage reduction increased by 500%\nIncreases life and mana regeneration by too much\n+4000 Max Life and +1000 Max Mana\nGrants immunity to knockback, fall damage, and fire blocks\nGrants immunity to almost all vanilla debuffs\nIncreases length of invincibility after taking damage... hopefully\nEffects of Philosopher's Stone... hopefully");
+			ItemID.Sets.ItemNoGravity[base.Item.type] = true;
+			Main.RegisterItemAnimation(base.Item.type, new DrawAnimationVertical(4, 15));
 		}
 
 		// Token: 0x06000057 RID: 87 RVA: 0x0000413C File Offset: 0x0000233C
 		public override void SetDefaults()
 		{
-			base.item.width = 24;
-			base.item.height = 28;
-			base.item.value = 1000000;
-			base.item.rare = -1;
-			base.item.expert = false;
-			base.item.accessory = true;
-			base.item.defense = 500;
-			base.item.lifeRegen = 400;
+			base.Item.width = 24;
+			base.Item.height = 28;
+			base.Item.value = 1000000;
+			base.Item.rare = -1;
+			base.Item.expert = false;
+			base.Item.accessory = true;
+			base.Item.defense = 500;
+			base.Item.lifeRegen = 400;
 		}
 
 		// Token: 0x06000058 RID: 88 RVA: 0x000041B8 File Offset: 0x000023B8
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.thorns += 500f;
-			player.allDamage += 5f;
-			player.meleeCrit += 500;
-			player.rangedCrit += 500;
-			player.magicCrit += 500;
-			player.thrownCrit += 500;
+			player.GetDamage(DamageClass.Generic) += 5f;
+			player.GetCritChance(DamageClass.Generic) += 500;
+			player.GetCritChance(DamageClass.Ranged) += 500;
+			player.GetCritChance(DamageClass.Magic) += 500;
+			player.GetCritChance(DamageClass.Throwing) += 500;
 			Mod Calamity = ModLoader.GetMod("CalamityMod");
 			if (Calamity != null)
 			{
@@ -61,7 +61,7 @@ namespace UnfinishedSetnour6Mod.Items.Accessories
 			player.longInvince = true;
 			player.lavaImmune = true;
 			player.noFallDmg = true;
-			player.starCloak = true;
+			//player.starCloak = true;
 			player.longInvince = true;
 			player.buffImmune[20] = true;
 			player.buffImmune[22] = true;
@@ -128,9 +128,9 @@ namespace UnfinishedSetnour6Mod.Items.Accessories
 		{
 			foreach (TooltipLine line2 in list)
 			{
-				if (line2.mod == "Terraria" && line2.Name == "ItemName")
+				if (line2.Mod == "Terraria" && line2.Name == "ItemName")
 				{
-					line2.overrideColor = new Color?(new Color(40, 50, 60, Main.DiscoB - Main.DiscoB * 18));
+					line2.OverrideColor = new Color?(new Color(40, 50, 60, Main.DiscoB - Main.DiscoB * 18));
 				}
 			}
 		}

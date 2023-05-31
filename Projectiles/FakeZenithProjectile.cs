@@ -14,8 +14,8 @@ namespace UnfinishedSetnour6Mod.Projectiles
 		// Token: 0x06000003 RID: 3 RVA: 0x0000205A File Offset: 0x0000025A
 		public override void SetDefaults()
 		{
-			base.projectile.CloneDefaults(132);
-			this.aiType = 132;
+			base.Projectile.CloneDefaults(132);
+			this.AIType = 132;
 		}
 
 		// Token: 0x06000004 RID: 4 RVA: 0x00002077 File Offset: 0x00000277

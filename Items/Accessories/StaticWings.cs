@@ -8,24 +8,24 @@ using Terraria.ModLoader;
 namespace UnfinishedSetnour6Mod.Items.Accessories
 {
 	// Token: 0x02000014 RID: 20
-	[AutoloadEquip(new EquipType[] { 9 })]
+	[AutoloadEquip(EquipType.Wings)]
 	public class StaticWings : ModItem
 	{
 		// Token: 0x06000048 RID: 72 RVA: 0x00003ABC File Offset: 0x00001CBC
 		public override void SetStaticDefaults()
 		{
-			base.DisplayName.SetDefault("Static Wings");
-			base.Tooltip.SetDefault("Allows incredible flight and slow fall");
-			Main.RegisterItemAnimation(base.item.type, new DrawAnimationVertical(4, 15));
+			// base.DisplayName.SetDefault("Static Wings");
+			// base.Tooltip.SetDefault("Allows incredible flight and slow fall");
+			Main.RegisterItemAnimation(base.Item.type, new DrawAnimationVertical(4, 15));
 		}
 
 		// Token: 0x06000049 RID: 73 RVA: 0x00003AF6 File Offset: 0x00001CF6
 		public override void SetDefaults()
 		{
-			base.item.width = 22;
-			base.item.height = 20;
-			base.item.rare = 11;
-			base.item.accessory = true;
+			base.Item.width = 22;
+			base.Item.height = 20;
+			base.Item.rare = 11;
+			base.Item.accessory = true;
 		}
 
 		// Token: 0x0600004A RID: 74 RVA: 0x00003B2B File Offset: 0x00001D2B
@@ -63,9 +63,9 @@ namespace UnfinishedSetnour6Mod.Items.Accessories
 		{
 			foreach (TooltipLine line2 in list)
 			{
-				if (line2.mod == "Terraria" && line2.Name == "ItemName")
+				if (line2.Mod == "Terraria" && line2.Name == "ItemName")
 				{
-					line2.overrideColor = new Color?(new Color(170, 160, 170));
+					line2.OverrideColor = new Color?(new Color(170, 160, 170));
 				}
 			}
 		}
@@ -73,8 +73,8 @@ namespace UnfinishedSetnour6Mod.Items.Accessories
 		// Token: 0x0600004E RID: 78 RVA: 0x00003C48 File Offset: 0x00001E48
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(base.mod);
-			recipe.AddIngredient(base.mod.GetItem("StaticalEssence"), 8);
+			Recipe recipe = /* base */CreateRecipe();
+			recipe.AddIngredient(ModContent.ItemType<Drops.StaticalEssence>(), 8);
 			recipe.AddIngredient(3467, 500);
 			recipe.AddIngredient(3458, 20);
 			recipe.AddIngredient(3457, 20);
@@ -84,13 +84,12 @@ namespace UnfinishedSetnour6Mod.Items.Accessories
 			recipe.AddIngredient(2609, 1);
 			recipe.AddIngredient(3883, 1);
 			recipe.AddIngredient(575, 60);
-			if (ModLoader.GetMod("AlchemistNPC") != null)
-			{
-				recipe.AddIngredient(ModLoader.GetMod("AlchemistNPC").ItemType("EmagledFragmentation"), 120);
-			}
+			//if (ModLoader.GetMod("AlchemistNPCLite") != null)
+			//{
+			//	recipe.AddIngredient(ModLoader.GetMod("AlchemistNPCLite").Find<ModItem>("EmagledFragmentation").Type, 120);
+			//}
 			recipe.AddTile(412);
-			recipe.SetResult(this, 1);
-			recipe.AddRecipe();
+			recipe.Register();
 		}
 
 		// Token: 0x0600004F RID: 79 RVA: 0x000022B6 File Offset: 0x000004B6

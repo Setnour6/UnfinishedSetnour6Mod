@@ -1,0 +1,11 @@
+
+*.vsidx
+.vs/UnfinishedSetnour6Mod/v17/.suo
+.vs/*
+obj/*
+bin/*
+/.vs/UnfinishedSetnour6Mod/FileContentIndex/*.vsidx
+/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/obj/Debug/UnfinishedSetnour6Mod.csproj.AssemblyReference.cache
+/obj/Debug/.NETFramework,Version=v4.8.AssemblyAttributes.cs
+/.vs/UnfinishedSetnour6Mod/v17/.suo

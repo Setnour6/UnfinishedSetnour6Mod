@@ -8,7 +8,7 @@ namespace UnfinishedSetnour6Mod.NPCs
 	public class ModGlobalNPC : GlobalNPC
 	{
 		// Token: 0x06000008 RID: 8 RVA: 0x0000209C File Offset: 0x0000029C
-		public override void NPCLoot(NPC npc)
+		public override void OnKill(NPC npc)
 		{
 			int type = npc.type;
 			if (type != 68)
@@ -19,12 +19,12 @@ namespace UnfinishedSetnour6Mod.NPCs
 				}
 				if (Main.rand.Next(0) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, base.mod.ItemType("StaticalEssence"), 1, false, 0, false, false);
+					Item.NewItem(npc.GetSource_Loot(), npc.position, npc.width, npc.height, base.Mod.Find<ModItem>("StaticalEssence").Type, 1, false, 0, false, false);
 				}
 			}
 			else if (Main.rand.Next(0) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, base.mod.ItemType("StaticalEssence"), 1, false, 0, false, false);
+				Item.NewItem(npc.GetSource_Loot(), npc.position, npc.width, npc.height, base.Mod.Find<ModItem>("StaticalEssence").Type, 1, false, 0, false, false);
 				return;
 			}
 		}
